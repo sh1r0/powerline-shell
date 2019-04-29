@@ -4,9 +4,11 @@ def add_set_term_title_segment(powerline):
         return
 
     if powerline.args.shell == 'bash':
-        set_title = '\\[\\e]0;\\u@\\h: \\w\\a\\]'
+        title = os.getenv('TITLE', '\\u@\\h: \\w')
+        set_title = '\\[\\e]0;{0}\\a\\]'.format(title)
     elif powerline.args.shell == 'zsh':
-        set_title = '\033]0;%n@%m: %~\007'
+        title = os.getenv('TITLE', '%n@%m: %~')
+        set_title = '\033]0;{0}\007'.format(title)
     else:
         import socket
         set_title = '\033]0;%s@%s: %s\007' % (os.getenv('USER'), socket.gethostname().split('.')[0], powerline.cwd or os.getenv('PWD'))

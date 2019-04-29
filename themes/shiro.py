@@ -9,15 +9,15 @@ class DefaultColor:
 
     HOSTNAME_FG = 250
     HOSTNAME_BG = 238
-    
+
     TIME_FG = 161
     TIME_BG = 16
 
     HOME_SPECIAL_DISPLAY = True
     HOME_BG = 31  # blueish
     HOME_FG = 15  # white
-    PATH_BG = 21 # 237  # dark grey
-    PATH_FG = 250  # light grey
+    PATH_BG = 237  # dark grey
+    PATH_FG = 255 # 250  # light grey
     CWD_FG = 254  # nearly-white grey
     SEPARATOR_FG = 244
 
